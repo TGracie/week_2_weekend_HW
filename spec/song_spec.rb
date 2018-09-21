@@ -7,7 +7,7 @@ require_relative("../song.rb")
 
 class SongTest < MiniTest::Test
 
-
+  ##TESTS
   #####################################################################
   def test_song_has_name
 

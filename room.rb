@@ -2,9 +2,10 @@
 
 class Room
 
+  ##################################################################
   attr_reader :name, :fee
   attr_accessor :capacity, :patrons, :till, :playlist
-
+  ##################################################################
   def initialize(name, capacity, fee, playlist = [], patrons = [])
 
     @name = name
@@ -16,9 +17,14 @@ class Room
 
   end
 
+ ## METHODS
 ######################################################################
   def add_song(song)
     @playlist << song
+  end
+######################################################################
+  def remove_song(song)
+    @playlist.delete(song)
   end
 #######################################################################
   def head_count
@@ -33,6 +39,10 @@ class Room
     end
   end
 ######################################################################
+
+  def remove_guest(guest)
+    @patrons.delete(guest)
+  end
   # def take_payment
   #
   #   @till += fee  # rendered obsolete by room_transaction

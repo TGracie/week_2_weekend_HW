@@ -2,8 +2,10 @@
 
 class Guest
 
+  #####################################################################
   attr_reader :name, :age, :fav_song
   attr_accessor :wallet
+  #####################################################################
 
   def initialize(name, age, wallet, favourite_song)
 
@@ -25,7 +27,7 @@ class Guest
 
   end
 
-######################################################################
+
   def cheer(playlist)
 
     for song in playlist
