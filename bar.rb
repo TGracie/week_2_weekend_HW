@@ -26,8 +26,13 @@ class Bar
    }
  end
 
- def drink_price
-   @stock[:drink][price]
+ def drink_price(drink)
+   for item in @stock
+     if item[:drink].name == drink
+       return item[:drink].price
+     end
+   end
+   # drink.price
  end
 
 end #class end
