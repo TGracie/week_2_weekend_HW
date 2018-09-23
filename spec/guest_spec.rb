@@ -2,7 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 require_relative("../guest.rb")
 require_relative("../song.rb")
-# require_relative("../customer.rb")
+require_relative("../bar.rb")
 # require_relative("../food.rb")
 
 class SongTest < MiniTest::Test
@@ -10,6 +10,14 @@ class SongTest < MiniTest::Test
   def setup
 
     @Tom = Guest.new("Thomas", 24, 150, "Shotgun")
+    @bar = Bar.new("Globe Bar", [
+      {
+        name: "bub",
+        price: 15,
+        stock: 50
+      } # hash end
+    ] # array end
+    )
 
   end
 
@@ -40,5 +48,10 @@ class SongTest < MiniTest::Test
   #
   # end
 # customer doesn't check they have enough the room does, good test just in the wrong place
+
+  def test_buy_drink
+    @Tom.buy_drink("bub")
+    assert_equal(135, @Tom.wallet)
+  end
 
 end #class end

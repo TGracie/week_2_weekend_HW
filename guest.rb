@@ -38,6 +38,14 @@ class Guest
     end
 
   end
+
+  def buy_drink(drink)
+    for item in stock
+      if item[:name] == drink
+        @wallet -= item[:price]
+      end
+    end
+  end
 #######################################################################
 
 
