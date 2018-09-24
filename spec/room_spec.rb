@@ -125,9 +125,9 @@ class RoomTest < MiniTest::Test
 # also need to remove songs
 
   def test_remove_song_from_room
-  @room4.remove_song(@ezra)
+    @room4.remove_song(@ezra)
   # binding.pry
-  assert_equal(1, @room4.playlist.count)
+    assert_equal(1, @room4.playlist.count)
   end
 ######################################################################
 
